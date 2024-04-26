@@ -10,12 +10,13 @@ import Videos from './pages/Videos';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/youtubi",
     element: <App />,
     errorElment: <NotFound />,
     children: [
       { index: true, element: <Videos /> },
-      { path: "videos", element: <Videos /> }, // 특정 사용자가 Videos가 아닌
+      { path: "", element: <Videos /> },
+      { path: "videos", element: <Videos /> },
       { path: "videos/:keyword", element: <Videos /> },
       { path: "videos/watch/:videoId", element: <VideoDetail /> },
     ],
