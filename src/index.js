@@ -4,21 +4,22 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import NotFound from "./pages/NotFound";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, HashRouter, createHashRouter } from "react-router-dom";
 import VideoDetail from "./pages/VideoDetail";
 import Videos from "./pages/Videos";
 
+const rootPath = process.env.NODE_ENV === "development" ? "/" : "/youtubi";
 const router = createBrowserRouter( [
   {
-    path: "/youtubi",
+    path: rootPath,
     element: <App />,
     errorElment: <NotFound />,
     children: [
       { index: true, element: <Videos /> },
       { path: "", element: <Videos /> },
-      { path: "videos", element: <Videos /> },
-      { path: "videos/:keyword", element: <Videos /> },
-      { path: "videos/watch/:videoId", element: <VideoDetail /> },
+      { path: rootPath + "videos", element: <Videos /> },
+      { path: rootPath + "videos/:keyword", element: <Videos /> },
+      { path: rootPath + "videos/watch/:videoId", element: <VideoDetail /> },
     ],
   },
 ]);
