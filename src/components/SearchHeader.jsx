@@ -10,11 +10,11 @@ export default function SearchHeader() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/videos/${text}`);
+    navigate(`/youtubi/videos/${text}`);
   };
   return (
     <header>
-      <Link to='/'>
+      <Link to='/youtubi'>
         <BsYoutube />
         <h1>Youtube</h1>
       </Link>
