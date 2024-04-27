@@ -1,9 +1,11 @@
 import React from "react";
 import { BsYoutube, BsSearch } from "react-icons/bs";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function SearchHeader() {
+  const {keyword} = useParams();
   const navigate = useNavigate();
   const [isInputClicked, setIsInputClicked] = useState(false);
   const [text, setText] = useState("");
@@ -13,9 +15,11 @@ export default function SearchHeader() {
     navigate(`/videos/${text}`);
   };
 
+  /* keyword가 변경될때 마다 setText 함수가 호출됨 */
+  useEffect(() => setText(keyword || ""), [keyword]);
   return (
     <header>
-      <Link to=''>
+      <Link to="">
         <BsYoutube />
         <h1>Youtubi</h1>
       </Link>
