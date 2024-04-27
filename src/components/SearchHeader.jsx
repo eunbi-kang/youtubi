@@ -7,16 +7,15 @@ export default function SearchHeader() {
   const navigate = useNavigate();
   const [isInputClicked, setIsInputClicked] = useState(false);
   const [text, setText] = useState("");
-  const rootPath = process.env.NODE_ENV === "development" ? "" : "/youtubi";
 
-  // console.log(rootPath);
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`${rootPath}/videos/${text}`);
+    navigate(`/videos/${text}`);
   };
+
   return (
     <header>
-      <Link to={rootPath}>
+      <Link to=''>
         <BsYoutube />
         <h1>Youtubi</h1>
       </Link>
