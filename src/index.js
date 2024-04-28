@@ -14,7 +14,10 @@ import Videos from "./pages/Videos";
 
 // const rootPath = process.env.NODE_ENV === "development" ? "" : `${process.env.REACT_APP_SERVER_HOST}`;
 // console.log('PUBLIC_URL값은??????????:'+rootPath);
-const router = createBrowserRouter( [
+
+
+console.log(process.env.PUBLIC_URL)
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -27,7 +30,7 @@ const router = createBrowserRouter( [
     ],
   },
 ],{ 
-  basename: process.env.REACT_APP_SERVER_HOST
+  basename: process.env.PUBLIC_URL
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
