@@ -7,9 +7,11 @@ export default function Videos() {
   const { keyword } = useParams();
   console.log(keyword);
   console.log(`${keyword ? "search" : "popular"}.json`);
-  
+ 
+  const baseUrl = process.env.PUBLIC_URL;
+
   const queryFn = async () => {
-    return fetch(`/videos/${keyword ? "search" : "popular"}.json`)
+    return fetch(`${baseUrl}/videos/${keyword ? "search" : "popular"}.json`)
       .then((res) => res.json())
       .then((data) => data.items);
   };
