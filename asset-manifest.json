@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/youtubi/static/css/main.c831303b.css",
-    "main.js": "/youtubi/static/js/main.8013fcf1.js",
+    "main.css": "/youtubi/static/css/main.47dae1ad.css",
+    "main.js": "/youtubi/static/js/main.daaa3018.js",
     "static/js/206.7c58a56c.chunk.js": "/youtubi/static/js/206.7c58a56c.chunk.js",
     "index.html": "/youtubi/index.html"
   },
   "entrypoints": [
-    "static/css/main.c831303b.css",
-    "static/js/main.8013fcf1.js"
+    "static/css/main.47dae1ad.css",
+    "static/js/main.daaa3018.js"
   ]
 }
