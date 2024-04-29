@@ -1,13 +1,6 @@
-import axios from "axios";
-
 export default class Youtube {
-  constructor() {
-    /* axios 통신을 할 때, 필요한 기본적인 Setting을 axios.create를 통해 설정해 준 다음
-       httpClient에 할당해준다. */
-    this.httpClient = axios.create({
-        baseURL: 'https://www.googleapis.com/youtube/v3',
-        params: { key: process.env.REACT_APP_YOUTUBE_API_KEY }
-    })
+  constructor(apiClient) {
+    this.apiClient = apiClient;
   }
 
   async search(keyword) {
@@ -17,25 +10,28 @@ export default class Youtube {
   }
 
   async #searchByKeyword(keyword) {
-    return this.httpClient
-      .get('search', {params: {
-        part: 'snippet',
-        maxResults: 25,
-        type: 'video',
-        q: keyword
-      }})
+    return this.apiClient
+      .search({
+        params: {
+          part: "snippet",
+          maxResults: 25,
+          type: "video",
+          q: keyword,
+        },
+      })
       .then((res) => res.data.items)
       .then((items) => items.map((item) => ({ ...item, id: item.id.videoId })));
   }
 
   async #mostPopular() {
-    return this.httpClient
-      .get('videos', {params: {
-        part: 'snippet',
-        maxResults: 25,
-        chart: 'mostPopular',
-      },
-    })
-    .then((res) => res.data.items)
+    return this.apiClient
+      .videos({
+        params: {
+          part: "snippet",
+          maxResults: 25,
+          chart: "mostPopular",
+        },
+      })
+      .then((res) => res.data.items);
   }
 }
