@@ -1,4 +1,5 @@
 import React from "react";
+import { formatAgo } from "../util/date";
 
 export default function VideoCard({ video }) {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
@@ -8,7 +9,7 @@ export default function VideoCard({ video }) {
       <div>
         <p>{title}</p>
         <p>{channelTitle}</p>
-        <p>{publishedAt}</p>
+        <p>{formatAgo(publishedAt, 'ko')}</p>
       </div>
     </li>
   );
