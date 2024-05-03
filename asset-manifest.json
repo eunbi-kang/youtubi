@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/youtubi/static/css/main.47dae1ad.css",
-    "main.js": "/youtubi/static/js/main.380cc114.js",
+    "main.js": "/youtubi/static/js/main.9f28bcd9.js",
     "static/js/206.7c58a56c.chunk.js": "/youtubi/static/js/206.7c58a56c.chunk.js",
     "index.html": "/youtubi/index.html"
   },
   "entrypoints": [
     "static/css/main.47dae1ad.css",
-    "static/js/main.380cc114.js"
+    "static/js/main.9f28bcd9.js"
   ]
 }
