@@ -24,7 +24,7 @@ export default class Youtube {
       },
     })
     .then((res) => res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
-    ) // 12.19 5:58 ~
+    );
   }
   async #searchByKeyword(keyword) {
     return this.apiClient
@@ -36,8 +36,8 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) => res.data.items)
-      .then((items) => items.map((item) => ({ ...item, id: item.id.videoId })));
+      .then((res) => res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+    );
   }
 
   async #mostPopular() {
