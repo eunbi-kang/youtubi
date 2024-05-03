@@ -1,8 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import { useYoutubeApi } from "../context/YoutubeApiContext";
+
 
 export default function Videos() {
   const { keyword } = useParams();
@@ -19,7 +20,6 @@ export default function Videos() {
 
   return (
     <>
-      <div>Videos {keyword ? `🔍${keyword}` : "🔥"}</div>
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong 😖</p>}
       {videos && (

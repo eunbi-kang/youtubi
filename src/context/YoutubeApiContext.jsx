@@ -15,11 +15,6 @@ const client = process.env.NODE_ENV === "development" ? new FakeYoutubeClient() 
 // const client = process.env.NODE_ENV === "development" ? new YoutubeClient() : new FakeYoutubeClient() ;
 const youtube = new Youtube(client);
 
-
-
-
-
-
 export function YoutubeApiProvider({ children }) {
   return (
     <YoutubeApiContext.Provider value={{ youtube }}>

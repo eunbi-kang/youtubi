@@ -20,7 +20,7 @@ export default function RelatedVideos({ id }) {
       {videos && (
         <ul className="">
           {videos.map((video) => (
-            <VideoCard key={video.id} video={video} />
+            <VideoCard key={video.id} video={video} type='list' />
           ))}
         </ul>
       )}
