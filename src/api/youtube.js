@@ -20,12 +20,14 @@ export default class Youtube {
         part: "snippet",
         maxResults: 25,
         type: "video",
-        relatedToVideoId: id
+        channelId: id,
+        order: "date"
       },
     })
-    .then((res) => res.data.items.map((item) => ({ ...item, id: item.id.videoId }))
+    .then((res) => res.data.items.map((item) => ({ ...item, id: item.id.channelId }))
     );
   }
+
   async #searchByKeyword(keyword) {
     return this.apiClient
       .search({
@@ -46,7 +48,7 @@ export default class Youtube {
         params: {
           part: "snippet",
           maxResults: 25,
-          chart: "mostPopular",
+          chart: "mostPopular"
         },
       })
       .then((res) => res.data.items);
