@@ -11,9 +11,9 @@ export const YoutubeApiContext = createContext();
 // const client = new YoutubeClient();
 
 // 배포용
-// const client = process.env.NODE_ENV === "development" ? new FakeYoutubeClient() : new YoutubeClient() ;
+const client = process.env.NODE_ENV === "development" ? new FakeYoutubeClient() : new YoutubeClient() ;
 //테스트용
-const client = process.env.NODE_ENV === "development" ? new YoutubeClient() : new FakeYoutubeClient() ;
+// const client = process.env.NODE_ENV === "development" ? new YoutubeClient() : new FakeYoutubeClient() ;
 const youtube = new Youtube(client);
 
 export function YoutubeApiProvider({ children }) {
