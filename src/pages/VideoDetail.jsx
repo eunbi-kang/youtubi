@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ChannelInfo from '../components/ChannelInfo';
 import RelatedVideos from '../components/RelatedVideos';
+import { decode } from "html-entities";
 
 export default function VideoDetail() {
   const {
@@ -21,7 +22,7 @@ export default function VideoDetail() {
           title={title}
         />
         <div className='p-8'>
-          <h2 className='text-xl font-bold'>{title}</h2>
+          <h2 className='text-xl font-bold'>{decode(title)}</h2>
           <ChannelInfo id={channelId} name={channelTitle} />
           <pre className='whitespace-pre-wrap'>{description}</pre>
         </div>
